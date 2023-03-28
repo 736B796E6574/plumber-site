@@ -8,7 +8,7 @@ import PlumbingIcon from '@mui/icons-material/Plumbing';
 
 function Header() {
   return (
-    <Navbar className={styles.Navvywavvy} collapseOnSelect expand="lg"  variant="dark">
+    <Navbar className={styles.Navvywavvy} collapseOnSelect expand="lg" variant="dark">
       <Container>
         <Navbar.Brand className={styles.NavBrand} href="#home">Michael Daly PHE  <PlumbingIcon /></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -16,13 +16,13 @@ function Header() {
           <Nav className="me-auto">
             
           </Nav>
-          <Nav className={styles.Nav}>
-            <NavDropdown title="Services" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Plumbing</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
+          <Nav className={styles.Nav} >
+            <NavDropdown bg="primary" title="Services" id="collasible-nav-dropdown" >
+              <NavDropdown.Item style={{ color: "#212121", fontWeight: "500" }} href="#action/3.1">Plumbing</NavDropdown.Item>
+              <NavDropdown.Item style={{ color: "#212121", fontWeight: "500" }} href="#action/3.2">
                 Heating
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Electric</NavDropdown.Item>
+              <NavDropdown.Item style={{ color: "#212121", fontWeight: "500" }} href="#action/3.3">Electric</NavDropdown.Item>
               
             </NavDropdown>
           <Nav.Link href="#features">About Us</Nav.Link>
