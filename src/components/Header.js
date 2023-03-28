@@ -10,7 +10,7 @@ function Header() {
   return (
     <Navbar className={styles.Navvywavvy} collapseOnSelect expand="lg" variant="dark">
       <Container>
-        <Navbar.Brand className={styles.NavBrand} href="#home">Michael Daly PHE  <PlumbingIcon /></Navbar.Brand>
+        <Navbar.Brand className={styles.NavBrand} href="#home">Michael Daly PHE  <PlumbingIcon className={styles.NavBrandIcon} /></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">

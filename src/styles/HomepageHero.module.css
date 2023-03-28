@@ -22,3 +22,16 @@
 .HeroImage {
     width: 100vw;
 }
+
+.HeroImageContainer {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    background-position: center;
+    background-size: cover;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url('https://hunter-water.imgix.net/assets/src/uploads/images/Building-and-development/plumbers002_191217_204827.jpg?auto=compress%2Cformat&fit=clip&mode=crop&q=80&ixlib=imgixjs-3.5.1&w=1446');
+}
