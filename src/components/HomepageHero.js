@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from "../styles/HomepageHero.module.css"
 import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
+import LoginButton from './LoginButton';
 
 function HomepageHero() {
   return (
@@ -9,8 +10,8 @@ function HomepageHero() {
         
       </div>
       <div class={styles.HeroImageContainer}>
+        <LoginButton />
         
-          
       </div>
     </div>
   )

@@ -12,7 +12,7 @@ root.render(
     domain="dev-hgglmipgygf5ikzv.us.auth0.com"
     clientId="ddgHUCB8KtseTGDis7YZ9DKFGeWZxDRS"
     authorizationParams={{
-      redirect_uri: "https://plumber.herokuapp.com/"
+      redirect_uri: window.location.origin
     }}
   >
     <App />
