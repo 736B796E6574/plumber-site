@@ -10,7 +10,7 @@ function HomepageHero() {
         
       </div>
       <div class={styles.HeroImageContainer}>
-        <LoginButton />
+       
         
       </div>
     </div>

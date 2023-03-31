@@ -5,6 +5,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import styles from "../styles/Header.module.css"
 import Button from 'react-bootstrap/Button'
 import PlumbingIcon from '@mui/icons-material/Plumbing';
+import LoginButton from './LoginButton';
 
 function Header() {
   return (
@@ -27,7 +28,7 @@ function Header() {
             </NavDropdown>
           <Nav.Link href="#features">About Us</Nav.Link>
             <Nav.Link href="#pricing">Contact</Nav.Link>
-            <Button variant="outline-light">Pay</Button>{' '}
+            <LoginButton />{' '}
           </Nav>
         </Navbar.Collapse>
       </Container>
