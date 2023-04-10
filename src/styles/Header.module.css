@@ -34,3 +34,16 @@
 .NavDropdownItem a {
     color: fuchsia;
 }
+
+.NavSpan {
+    color: #fafafa;
+}
+
+.RouteLink {
+    text-decoration: none;
+    color: #fafafa;
+}
+
+.RouteLink:hover {
+    color: rgb(222, 232, 243);
+}
