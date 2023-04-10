@@ -6,18 +6,21 @@ import styles from "../styles/Header.module.css"
 import Button from 'react-bootstrap/Button'
 import PlumbingIcon from '@mui/icons-material/Plumbing';
 import LoginButton from './LoginButton';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
     <Navbar className={styles.Navvywavvy} collapseOnSelect expand="lg" variant="dark">
       <Container>
-        <Navbar.Brand className={styles.NavBrand} href="#home">Michael Daly PHE  <PlumbingIcon className={styles.NavBrandIcon} /></Navbar.Brand>
+        <Navbar.Brand className={styles.NavBrand} href="#home"><Link className={styles.NavBrand} to="/">John Smith PHE  </Link><PlumbingIcon className={styles.NavBrandIcon} /></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             
           </Nav>
           <Nav className={styles.Nav} >
+          <Nav.Link href="#shop">Shop</Nav.Link>
             <NavDropdown bg="primary" title="Services" id="collasible-nav-dropdown" >
               <NavDropdown.Item style={{ color: "#212121", fontWeight: "500" }} href="#action/3.1">Plumbing</NavDropdown.Item>
               <NavDropdown.Item style={{ color: "#212121", fontWeight: "500" }} href="#action/3.2">
@@ -29,10 +32,14 @@ function Header() {
           <Nav.Link href="#features">About Us</Nav.Link>
             <Nav.Link href="#pricing">Contact</Nav.Link>
             <LoginButton />{' '}
+            <Nav.Link href="#cart"><Link className={styles.NavBrand} to="/products"><ShoppingCartIcon /><span> 0</span></Link></Nav.Link>
+            
           </Nav>
         </Navbar.Collapse>
       </Container>
+      
     </Navbar>
+    
   );
 }
 
