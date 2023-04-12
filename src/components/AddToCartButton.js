@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { CartContext } from "../contexts/CartContext";
 
 const AddToCartButton = ({ to, children }) => {
+  const { addToCart } = useContext(CartContext);
   const style = {
     width: '55%',
     height: '40%',

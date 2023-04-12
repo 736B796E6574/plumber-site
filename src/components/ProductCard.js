@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container, Row, Col, Card, } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import AddToCartButton from '../components/AddToCartButton';
 import styles from "../styles/Products.module.css"
+import { CartContext } from "../contexts/CartContext";
 
 const ProductCard = () => {
+    const { addToCart } = useContext(CartContext);
     const products = [
         {
           id: 1,
@@ -110,7 +112,7 @@ const ProductCard = () => {
                   <Card.Text className="mb-0">{product.name}</Card.Text>
                 </Card.Body>
                 <Card.Footer className="bg-white pt-0 border-0 text-left">
-                      <AddToCartButton />
+                      <button className={styles.AddToCartButton}onClick={() => addToCart(product)}>Add to Cart</button>
                   <Row>
                     <Col>
                       <p className="lead mb-0 text-left font-weight-bold">

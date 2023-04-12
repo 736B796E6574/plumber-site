@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Auth0Provider } from "@auth0/auth0-react";
 import Profile from './components/Profile';
+import { CartProvider } from './contexts/CartContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,7 +17,9 @@ root.render(
     redirect_uri: window.location.origin
   }}
   >
-    <App />
+    <CartProvider>
+       <App />
+    </CartProvider>
   </Auth0Provider>
 );
 
