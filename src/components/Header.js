@@ -8,8 +8,15 @@ import PlumbingIcon from '@mui/icons-material/Plumbing';
 import LoginButton from './LoginButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link } from 'react-router-dom';
+import React, { useContext }  from 'react';
+import { CartContext } from "../contexts/CartContext";
 
 function Header() {
+  const { cart } = useContext(CartContext);
+  const totalItemsInCart = cart.reduce(
+    (total, product) => total + product.quantity,
+    0
+  );
   return (
     <Navbar className={styles.Navvywavvy} collapseOnSelect expand="lg" variant="dark">
       <Container>
@@ -32,7 +39,7 @@ function Header() {
           <Nav.Link href="#features">About Us</Nav.Link>
             <Nav.Link href="#pricing">Contact</Nav.Link>
             <LoginButton />{' '}
-            <Nav.Link href="#cart"><ShoppingCartIcon /><span className={styles.NavSpan}> 0</span></Nav.Link>
+            <Nav.Link href="#cart"><ShoppingCartIcon /><span className={styles.NavSpan}> {totalItemsInCart}</span></Nav.Link>
             
           </Nav>
         </Navbar.Collapse>
