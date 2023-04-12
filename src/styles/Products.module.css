@@ -4,15 +4,24 @@
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
 
+
 }
 
 .Heading1 {
     color: rgba(0, 0, 0, 0.712);
     font-family: "Montserrat", sans-serif;
-    text-align: left;
-    margin: 40px auto 20px 40px;
-    border: 1.5px solid rgba(0, 0, 0, 0.296);
+    text-align: center;
+    margin: 40px auto 50px auto;
+    border: 1.5px solid rgba(131, 180, 226, 0.249);
     display: inline-block;
+    font-weight: 700;
     padding: 3px;
+    border-radius: 5px;
+    font-size: 1.6rem;
+}
+
+.ProductCardContainer:hover {
+
+    box-shadow: 0 0 1px 1px rgba(131, 180, 226, 0.249);
     border-radius: 5px;
 }
