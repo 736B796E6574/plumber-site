@@ -39,7 +39,10 @@ function Header() {
           <Nav.Link href="#features">About Us</Nav.Link>
             <Nav.Link href="#pricing">Contact</Nav.Link>
             <LoginButton />{' '}
-            <Nav.Link href="#cart"><ShoppingCartIcon /><span className={styles.NavSpan}> {totalItemsInCart}</span></Nav.Link>
+            <Nav.Link href="#cart">
+            <Link className={styles.RouteLink} to="/cart"><ShoppingCartIcon /><span className={styles.NavSpan}> {totalItemsInCart}</span></Link>
+              
+            </Nav.Link>
             
           </Nav>
         </Navbar.Collapse>
