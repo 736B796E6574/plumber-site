@@ -10,6 +10,8 @@ import {
     Button,
     Form,
   } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import styles from "../styles/Cart.module.css"
 
 const Cart = () => {
   const { cart, removeFromCart, updateQuantity } = useContext(CartContext);
@@ -53,6 +55,12 @@ const Cart = () => {
                   </Row>
                 </ListGroupItem>
               ))}
+              <Button className={styles.RouteButton}
+                        variant="primary"
+                      >
+                        <Link className={styles.RouteLink} to="/checkout">Secure Checkout</Link>
+                      </Button>
+              
             </ListGroup>
           )}
         </Col>
