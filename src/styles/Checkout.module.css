@@ -21,3 +21,23 @@
 .StripeElementContainer {
     background-color: fuchsia;
 }
+
+.CardElement {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.Heading1 {
+    color: rgba(0, 0, 0, 0.712);
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    margin: 40px auto 50px auto;
+    /* border: 1.5px solid rgba(131, 180, 226, 0.249); */
+    text-decoration: underline;
+    display: inline-block;
+    font-weight: 700;
+    padding: 3px;
+    border-radius: 5px;
+    font-size: 1.6rem;
+}

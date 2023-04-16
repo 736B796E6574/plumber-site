@@ -8,7 +8,8 @@ import { Container, Row, Col, Table, Form, Button, Alert } from "react-bootstrap
 import "../styles/Checkout.module.css";
 import { CartContext } from "../contexts/CartContext";
 import Select from 'react-select';
-import { getNames } from 'country-list';
+import { getNames, getCodes } from 'country-list';
+import styles from "../styles/Checkout.module.css"
 
 const CARD_ELEMENT_OPTIONS = {
   style: {
@@ -16,10 +17,21 @@ const CARD_ELEMENT_OPTIONS = {
       color: '#32325d',
       fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
       fontSmoothing: 'antialiased',
+      border: '1px solid #32325d',
       fontSize: '16px',
       '::placeholder': {
-        color: 'rgb(33,37,41)',
+        color: '#808487',
+        
       },
+    },':-webkit-autofill': {
+      color: '#a1000e',
+      fontFamily: '"Courier New", monospace',
+      fontSize: '14px',
+      fontStyle: 'normal',
+      fontWeight: 'normal',
+      letterSpacing: '0.025em',
+      textDecoration: 'none',
+      textTransform: 'capitalize',
     },
     invalid: {
       color: '#fa755a',
@@ -29,8 +41,9 @@ const CARD_ELEMENT_OPTIONS = {
 };
 
 const Checkout = () => {
-  
-  const countries = getNames().map((name) => ({ label: name, value: name }));
+  const countryCodes = getCodes();
+  const countryNames = getNames();
+  const countries = countryNames.map((name, index) => ({ label: name, value: countryCodes[index] }));
   const { cart } = useContext(CartContext);
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
@@ -95,8 +108,8 @@ const Checkout = () => {
     <Container>
       <Row>
         <Col>
-          <h2>Checkout</h2>
-          <Table striped bordered hover>
+          <h1 className={styles.Heading1}>Checkout</h1>
+          <Table striped rounded border-dark hover>
             <thead>
               <tr>
                 <th>Product</th>
@@ -112,26 +125,28 @@ const Checkout = () => {
                   <td>{product.name}</td>
                   <td>
                     <img
-                      src={product.image}
+                      src={product.image.url}
                       alt={product.name}
                       style={{ width: '50px', height: 'auto' }}
                     />
                   </td>
-                  <td>${product.price.toFixed(2)}</td>
+                  <td>€{product.price.toFixed(2)}</td>
                   <td>{product.quantity}</td>
-                  <td>${(product.price * product.quantity).toFixed(2)}</td>
+                  <td>€{(product.price * product.quantity).toFixed(2)}</td>
                 </tr>
               ))}
               <tr>
                 <td colSpan="4">Total</td>
-                <td>${totalCost.toFixed(2)}</td>
+                <td>€{totalCost.toFixed(2)}</td>
               </tr>
             </tbody>
           </Table>
           </Col>
           </Row>
-          <Row justify-content-sm-center>
-          <Col style={colStyle} className="mx-auto" xs={10} md={6} lg={4}>
+          <Row justify-content-sm-center className="py-4">
+            <hr></hr>
+          <Col style={colStyle} className="mx-auto p-3 mt-5" xs={10} md={6} lg={6}>
+            <h2 className={styles.Heading1}>Secure Payment by Stripe</h2>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="formName">
               <Form.Label>Name</Form.Label>
@@ -191,10 +206,12 @@ const Checkout = () => {
             </Form.Group>
             <Form.Group>
               <Form.Label>Card details</Form.Label>
-              <CardElement className="mb-3 mt-3" options={CARD_ELEMENT_OPTIONS} />
+              <Container className={styles.CardElement}>
+              <CardElement className="mb-3 mt-3 rounded border-dark" options={CARD_ELEMENT_OPTIONS} />
+              </Container>
             </Form.Group>
             <Button type="submit" disabled={!stripe}>
-              Pay ${totalCost.toFixed(2)}
+              Pay €{totalCost.toFixed(2)}
             </Button>
           </Form>
           {successMessage && (
