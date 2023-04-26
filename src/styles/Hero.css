@@ -1,0 +1,38 @@
+/* Hero.css */
+.hero {
+    position: relative;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url('https://hunter-water.imgix.net/assets/src/uploads/images/Building-and-development/plumbers002_191217_204827.jpg?auto=compress%2Cformat&fit=clip&mode=crop&q=80&ixlib=imgixjs-3.5.1&w=1446');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: #fafafa;
+}
+
+.hero-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.overlay {
+    position: relative;
+    background: #005683;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.info-box {
+    position: relative;
+    z-index: 1;
+}
+
+.phone {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.phone-icon {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}

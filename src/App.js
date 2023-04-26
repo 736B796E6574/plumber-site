@@ -8,6 +8,7 @@ import Profile from './components/Profile';
 import Container from "react-bootstrap/Container";
 
 import Header from './components/Header';
+import Footerting from './components/Footerting';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Products from './pages/Products';
@@ -28,6 +29,7 @@ function App() {
         <Route path="/cart" element={<Cart__page />} />
         <Route path="/checkout" element={<Checkout__page />} />
       </Routes>
+      <Footerting />
     </Router>
      
       
