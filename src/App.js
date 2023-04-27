@@ -29,8 +29,8 @@ function App() {
         <Route path="/cart" element={<Cart__page />} />
         <Route path="/checkout" element={<Checkout__page />} />
       </Routes>
-      <Footerting />
     </Router>
+    <Footerting />
      
       
       
