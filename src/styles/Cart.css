@@ -3,7 +3,8 @@
     margin: 0;
     box-sizing: border-box;
     min-height: 80vh;
-    background-color: rgb(196, 196, 196);
+    background-color: rgb(217, 217, 217);
+    text-align: left;
 }
 
 .cart-headers {
@@ -23,4 +24,12 @@
 
 .continue-p {
     margin-left: auto;
+}
+
+.checkout-buttons {
+    background-color: orangered;
+    border: none;
+    width: 90%;
+    font-size: 1.2rem;
+    border-radius: 0;
 }
