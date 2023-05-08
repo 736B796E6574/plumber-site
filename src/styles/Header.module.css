@@ -16,7 +16,7 @@
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
     color: #fafafa;
-    border: 2px solid orange;
+    border: 2px solid orangered;
 }
 
 .NavBrand {
@@ -28,7 +28,7 @@
 }
 
 .NavBrandIcon {
-    color: orange;
+    color: orangered;
 }
 
 .NavDropdownItem a {

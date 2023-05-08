@@ -1,6 +1,6 @@
 h1 {
     font-family: "Montserrat", sans-serif;
-    font-weight: 600;
+    font-weight: 800;
     color: #323c41;
 }
 
@@ -52,7 +52,9 @@ h1 {
 .click-collect {
     color: #d0021b;
     font-family: "Montserrat", sans-serif;
-    font-weight: 500;
+    font-weight: 700;
+    font-size: 0.8rem;
+
 }
 
 .quantity-button {
@@ -79,4 +81,116 @@ h1 {
 .product-price {
     margin-left: auto;
     font-size: 1.5rem;
+}
+
+.order-summary {
+    background-color: #fff;
+    color: #323c41;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 20px;
+}
+
+.order-summary h2 {
+    font-weight: 800;
+}
+
+.sub-total-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.delivery-info {
+    color: #4b5960;
+    font-weight: 400;
+}
+
+.checkout-button-container {
+    text-align: center;
+}
+
+.payment-methods-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.cart-info {
+    text-align: center;
+    color: #323c41;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 20px;
+}
+
+.cart-text-1 {
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.cart-text-2 {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.cart-text-3 {
+    font-weight: 500;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.cart-text-4 {
+    font-weight: 600;
+}
+
+.cart-info-images-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-info-images-container img {
+    width: auto;
+    height: 25px;
+}
+
+.phone-number {
+    text-decoration: underline;
+}
+
+.quantity-button {
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.199);
+    height: 25px;
+    width: 25px;
+}
+
+.quantity-container {
+    display: flex;
+
+}
+
+.quantity-container span {
+    margin: 0 0 0 6px;
+
+}
+
+.quantity-button {
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.199);
+    height: 25px;
+    width: 25px;
+}
+
+.checkout-total {
+    font-size: 1.5rem;
+}
+
+.cart-delete-icon {
+    margin-left: 10px;
+    margin-top: 2px;
+    color: #d0021b;
+    text-decoration: none;
 }

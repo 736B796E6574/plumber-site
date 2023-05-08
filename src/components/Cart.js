@@ -28,42 +28,55 @@ function Cart() {
     <p>☞ Click & Collect</p>
     <p class="click-collect">Not available for click & collect</p>
   <div class="quantity-container">
-    <Button class="quantity-button">-</Button>
+    <button class="quantity-button">-</button>
     <div class="quantity-button"><span>0</span></div>
-    <Button class="quantity-button">+</Button>
+    <button class="quantity-button">+</button>
+    <a class="cart-delete-icon" href="#">✖︎</a>
   </div>
     </div>
     <div class="product-price">€356</div>
   </div>
 </Col>
 <Col className='p-4 col-md-4'>
-  <div className="bg-light">
-    <p>Order Summary</p>
+  <div className="order-summary">
+    <h2>Order Summary</h2>
+    <div class="sub-total-container">
     <p>Subtotal</p>
     <p>$450</p>
+    </div>
     <p>Delivery</p>
-    <p>Delivery will be added at checkout</p>
+    <p class="delivery-info">Delivery will be added at checkout (if applicable)</p>
+    <hr></hr>
+    <p>Add coupon code at checkout</p>
+    <hr></hr>
+    <div class="sub-total-container">
     <p>Total</p>
-    <p>$450</p>
-    <Button className="checkout-buttons">Go to checkout</Button>
-    <div>
+    <p class="checkout-total">$450</p>
+    </div>
+    <div class="checkout-button-container">
+    <Button className="checkout-buttons">Continue to checkout</Button>
+    </div>
+    <div class="payment-methods-container">
     <img src="https://www.diy.ie/spa/images/df7f9.svg"></img>
     <img src="https://www.diy.ie/spa/images/183ec.svg"></img>
     <img src="https://www.diy.ie/spa/images/0580e.svg"></img>
     <img src="https://www.diy.ie/spa/images/7bd44.svg"></img>
     <img src="https://www.diy.ie/spa/images/200e5.svg"></img>
     </div>
-    <p>Your personal details are protected.</p>
-    <p>Learn More</p>
-    <div>
+    
+    
+  </div>
+  <div class="cart-info">
+  <p class="cart-text-1">Your personal details are protected.</p>
+    <p class="cart-text-2">Learn More</p>
+    <div class="cart-info-images-container">
       <img src="https://www.diy.ie/spa/images/70ced.svg"></img>
       <img src="https://www.diy.ie/spa/images/95439.svg"></img>
       <img src="https://www.diy.ie/spa/images/e3e08.svg"></img>
     </div>
-    <p>Helping you to buy</p>
-    <p>Customer support team - 0373284628</p>
-    
-  </div>
+    <p class="cart-text-3">Helping you to buy</p>
+    <p class="cart-text-4">Customer support team - <span class="phone-number">0373284628</span></p>
+    </div>
 </Col>
   
   </Row>
