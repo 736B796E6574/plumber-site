@@ -20,18 +20,20 @@ function Cart() {
 <Row>
 <Col className='p-4'>
 
-  <div className="bg-light d-flex">
+  <div className="product-card d-flex">
     <div className='p-3'><img src='https://media.diy.com/is/image/Kingfisher/floplast-black-flexible-waste-pipe-l-25m-dia-80mm~5055149925689_02c?$MOB_PREV$&$width=115&$height=115'></img></div>
     <div>
-    <p className=''>I am the name of a lovely product</p>
-    <p>I am some spiel about a potential special offer</p>
-  <div>
-    <Button>-</Button>
-    <span>0</span>
-    <Button>+</Button>
+    <p className=''>FloPlast Black Flexible Waste pipe,<br></br>(L)25m (Dia)80mm</p>
+    <p>✈︎ Home Delivery</p>
+    <p>☞ Click & Collect</p>
+    <p class="click-collect">Not available for click & collect</p>
+  <div class="quantity-container">
+    <Button class="quantity-button">-</Button>
+    <div class="quantity-button"><span>0</span></div>
+    <Button class="quantity-button">+</Button>
   </div>
     </div>
-    <div>$356</div>
+    <div class="product-price">€356</div>
   </div>
 </Col>
 <Col className='p-4 col-md-4'>

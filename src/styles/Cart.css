@@ -1,3 +1,9 @@
+h1 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    color: #323c41;
+}
+
 .cart-container {
     padding: 0;
     margin: 0;
@@ -32,4 +38,45 @@
     width: 90%;
     font-size: 1.2rem;
     border-radius: 0;
+}
+
+.product-card {
+    background-color: #fff;
+    color: #323c41;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 20px;
+}
+
+.click-collect {
+    color: #d0021b;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+
+.quantity-button {
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.199);
+    height: 25px;
+    width: 25px;
+}
+
+.quantity-container {
+    display: flex;
+
+}
+
+.quantity-container span {
+    margin: 0 0 0 6px;
+
+}
+
+.quantity-container img {
+    margin: 50px;
+}
+
+.product-price {
+    margin-left: auto;
+    font-size: 1.5rem;
 }
