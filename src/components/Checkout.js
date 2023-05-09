@@ -12,12 +12,12 @@ import { getNames, getCodes } from 'country-list';
 import styles from "../styles/Checkout.module.css"
 
 const CARD_ELEMENT_OPTIONS = {
+  hidePostalCode: true,
   style: {
     base: {
       color: '#32325d',
       fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
       fontSmoothing: 'antialiased',
-      border: '1px solid #32325d',
       fontSize: '16px',
       '::placeholder': {
         color: '#808487',
@@ -53,12 +53,7 @@ const Checkout = () => {
   const [country, setCountry] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const colStyle = {
-    borderWidth: '1px',
-    borderColor: 'black',
-    borderRadius: '4px',
-    borderStyle: 'solid',
-  };
+  
 
   const stripe = useStripe();
   const elements = useElements();
@@ -109,44 +104,13 @@ const Checkout = () => {
       <Row>
         <Col>
           <h1 className={styles.Heading1}>Checkout</h1>
-          <Table striped rounded border-dark hover>
-            <thead>
-              <tr>
-                <th>Product</th>
-                <th>Image</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Total</th>
-              </tr>
-            </thead>
-            <tbody>
-              {cart.map((product) => (
-                <tr key={product.id}>
-                  <td>{product.name}</td>
-                  <td>
-                    <img
-                      src={product.image.url}
-                      alt={product.name}
-                      style={{ width: '50px', height: 'auto' }}
-                    />
-                  </td>
-                  <td>€{product.price.toFixed(2)}</td>
-                  <td>{product.quantity}</td>
-                  <td>€{(product.price * product.quantity).toFixed(2)}</td>
-                </tr>
-              ))}
-              <tr>
-                <td colSpan="4">Total</td>
-                <td>€{totalCost.toFixed(2)}</td>
-              </tr>
-            </tbody>
-          </Table>
+          
           </Col>
           </Row>
           <Row justify-content-sm-center className="py-4">
-            <hr></hr>
-          <Col style={colStyle} className="mx-auto p-3 mt-5" xs={10} md={6} lg={6}>
-            <h2 className={styles.Heading1}>Secure Payment by Stripe</h2>
+            
+          <Col className="mx-auto p-3" xs={10} md={6} lg={6}>
+          
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="formName">
               <Form.Label>Name</Form.Label>
@@ -207,12 +171,13 @@ const Checkout = () => {
             <Form.Group>
               <Form.Label>Card details</Form.Label>
               <Container className={styles.CardElement}>
-              <CardElement className="mb-3 mt-3 rounded border-dark" options={CARD_ELEMENT_OPTIONS} />
+              <CardElement className="mb-3 mt-3 rounded" options={CARD_ELEMENT_OPTIONS} />
               </Container>
             </Form.Group>
-            <Button type="submit" disabled={!stripe}>
-              Pay €{totalCost.toFixed(2)}
-            </Button>
+            
+            <div class="checkout-button-container">
+    <Button type="submit" disabled={!stripe} className="checkout-buttons">Complete Payment</Button>
+    </div>
           </Form>
           {successMessage && (
             <Alert variant="success" className="mt-3">
@@ -225,6 +190,47 @@ const Checkout = () => {
           </Alert>
         )}
       </Col>
+      <Col className='p-4 col-md-4'>
+  <div className="order-summary">
+    <h2>Order Summary</h2>
+    <div class="sub-total-container">
+    <p>Subtotal</p>
+    <p>$450</p>
+    </div>
+    <p>Delivery</p>
+    <p class="delivery-info">Delivery will be added at checkout (if applicable)</p>
+    <hr></hr>
+    <p>Add coupon code at checkout</p>
+    <hr></hr>
+    <div class="sub-total-container">
+    <p>Total</p>
+    <p class="checkout-total">$450</p>
+    </div>
+    <div class="checkout-button-container">
+    <Button className="checkout-buttons">Back to cart</Button>
+    </div>
+    <div class="payment-methods-container">
+    <img src="https://www.diy.ie/spa/images/df7f9.svg"></img>
+    <img src="https://www.diy.ie/spa/images/183ec.svg"></img>
+    <img src="https://www.diy.ie/spa/images/0580e.svg"></img>
+    <img src="https://www.diy.ie/spa/images/7bd44.svg"></img>
+    <img src="https://www.diy.ie/spa/images/200e5.svg"></img>
+    </div>
+    
+    
+  </div>
+  <div class="cart-info">
+  <p class="cart-text-1">Your personal details are protected.</p>
+    <p class="cart-text-2">Learn More</p>
+    <div class="cart-info-images-container">
+      <img src="https://www.diy.ie/spa/images/70ced.svg"></img>
+      <img src="https://www.diy.ie/spa/images/95439.svg"></img>
+      <img src="https://www.diy.ie/spa/images/e3e08.svg"></img>
+    </div>
+    <p class="cart-text-3">Helping you to buy</p>
+    <p class="cart-text-4">Customer support team - <span class="phone-number">0373284628</span></p>
+    </div>
+</Col>
     </Row>
   </Container>
 );
