@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import { Auth0Provider } from "@auth0/auth0-react";
 import Profile from './components/Profile';
 import { CartProvider } from './contexts/CartContext';
+import { ApolloProvider } from "@apollo/client";
+import client from "./ApolloClient";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,9 +19,11 @@ root.render(
     redirect_uri: window.location.origin
   }}
   >
+    <ApolloProvider client={client}>
     <CartProvider>
        <App />
     </CartProvider>
+    </ApolloProvider>
   </Auth0Provider>
 );
 
