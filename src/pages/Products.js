@@ -11,6 +11,7 @@ const ProductList = () => {
           <h1 className={styles.Heading1}>All Products</h1>
         </div>
         <ProductCard />
+        <hr></hr>
     </div>
   );
 };

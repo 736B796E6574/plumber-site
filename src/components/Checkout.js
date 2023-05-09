@@ -51,14 +51,21 @@ const Checkout = () => {
   const [state, setState] = useState("");
   const [zip, setZip] = useState("");
   const [country, setCountry] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [email, setEmail] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+
   
 
   const stripe = useStripe();
   const elements = useElements();
 
-  const totalCost = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const deliveryCost = 15;
+const totalCost = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+const totalOrderCost = totalCost + deliveryCost;
+
+  
   const handleCountryChange = (selectedCountry) => {
     if (selectedCountry) {
       setCountry(selectedCountry.value);
@@ -80,6 +87,8 @@ const Checkout = () => {
       card: cardElement,
       billing_details: {
         name,
+        email,
+        phone: phoneNumber,
         address: {
           line1: address,
           city,
@@ -117,7 +126,29 @@ const Checkout = () => {
               <Form.Control
                 type="text"
                 value={name}
+                placeholder="Enter your full name"
                 onChange={(e) => setName(e.target.value)}
+                required
+              />
+            </Form.Group>
+            <Form.Group controlId="formEmail">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formPhoneNumber">
+              <Form.Label>Phone Number</Form.Label>
+              <Form.Control
+                type="tel"
+                placeholder="Enter your phone number"
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
                 required
               />
             </Form.Group>
@@ -126,6 +157,7 @@ const Checkout = () => {
               <Form.Control
                 type="text"
                 value={address}
+                placeholder="Enter your street address"
                 onChange={(e) => setAddress(e.target.value)}
                 required
               />
@@ -135,6 +167,7 @@ const Checkout = () => {
               <Form.Control
                 type="text"
                 value={city}
+                placeholder="Enter your City"
                 onChange={(e) => setCity(e.target.value)}
                 required
               />
@@ -143,6 +176,7 @@ const Checkout = () => {
               <Form.Label>State / Province</Form.Label>
               <Form.Control
                 type="text"
+                placeholder="Enter your State/County"
                 value={state}
                 onChange={(e) => setState(e.target.value)}
                 required
@@ -152,6 +186,7 @@ const Checkout = () => {
               <Form.Label>Postal Code</Form.Label>
               <Form.Control
                 type="text"
+                placeholder="Enter your Postal Code"
                 value={zip}
                 onChange={(e) => setZip(e.target.value)}
                 required
@@ -195,16 +230,19 @@ const Checkout = () => {
     <h2>Order Summary</h2>
     <div class="sub-total-container">
     <p>Subtotal</p>
-    <p>$450</p>
+    <p className="checkout-total">€{totalCost.toFixed(2)}</p>
+
     </div>
     <p>Delivery</p>
-    <p class="delivery-info">Delivery will be added at checkout (if applicable)</p>
+    <p className="delivery-info">
+  {deliveryCost > 0 ? `Delivery Cost: €${deliveryCost}` : "Delivery will be added at checkout (if applicable)"}
+</p>
     <hr></hr>
     <p>Add coupon code at checkout</p>
     <hr></hr>
     <div class="sub-total-container">
     <p>Total</p>
-    <p class="checkout-total">$450</p>
+    <p className="checkout-total">€{totalOrderCost}</p>
     </div>
     <div class="checkout-button-container">
     <Button className="checkout-buttons">Back to cart</Button>
